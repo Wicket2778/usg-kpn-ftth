@@ -132,7 +132,7 @@
                                     "enable": "''"
                                 },
                                 "default-route": "auto",                                
-                                "mtu": "1508",
+                                "mtu": "1500",
                                 "name-server": "auto",
                                 "password": "kpn",
                                 "user-id": "kpn"
