@@ -1,11 +1,7 @@
 # Ubiquiti USG with KPN FTTH, IPTV and IPv6
 This repo contains the files you need to succesfully configure the USG with KPN FTTH with IPTV and IPv6 enabled.
 
-Klik [hier](https://coolhva.github.io/usg-kpn-ftth/posts/unifi-security-gateway-kpn-ftth-iptv-ipv6/) voor een Nederlandse handleiding!
-
-If you have X4ALL please click [here](https://github.com/coolhva/usg-kpn-ftth/tree/xs4all) to download the specific configuration for XS4ALL.
-
-Please **[download a zip file](https://github.com/coolhva/usg-kpn-ftth/archive/master.zip)** with all the files and do not copy and paste the contents because of the UNIX file structure!
+Klik [hier](https://coolhva.github.io/usg-kpn-ftth/posts/unifi-security-gateway-kpn-ftth-iptv-ipv6/) voor een Nederlandse handleiding van de originele poster
 
 1. Place **config.gateway.json** at the unifi controller (*sites/default*) via SCP
 
@@ -33,6 +29,7 @@ show interfaces pppoe pppoe2 log | match "IPV6|LL"
 If you are using VLANs and have issues with the IPTV having hickups or being frozen you can try to change the config as follows:
 
 At the "igmp-proxy" section replace "eth1" with "eth.{vlan}" where {vlan} would be the VLAN where your decoders are in. 
+The file uses VLAN 101 for IPTV with subnet 192.168.100.0/24
 
 ```
 "eth1.100": {
@@ -60,8 +57,6 @@ To prevent the IPTV from flooding other network interfaces it's best to explicit
     "threshold": "1"
 }
 ```
-
-XS4ALL (a Dutch ISP which uses the KPN platform has more information regarding the technical details), more info can be found [here](https://www.xs4all.nl/service/diensten/internet/installeren/modem-instellen/hoe-kan-ik-een-ander-modem-dan-fritzbox-instellen.htm)
 
 This config.gateway.json has been tested on the following versions:
 
