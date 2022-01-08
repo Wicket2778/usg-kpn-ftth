@@ -132,7 +132,7 @@
                                     "enable": "''"
                                 },
                                 "default-route": "auto",                                
-                                "mtu": "1500",
+                                "mtu": "1508",
                                 "name-server": "auto",
                                 "password": "kpn",
                                 "user-id": "kpn"
@@ -179,18 +179,30 @@
             "interface": {
                 "eth0.4": {
                     "alt-subnet": [
-                        "0.0.0.0/0"
+                        "213.75.0.0/16"
+                    ],
+                    "alt-subnet": [
+                        "217.166.0.0/16"
                     ],
                     "role": "upstream",
+                    "ratelimit": "0",
                     "threshold": "1"
                 },
-                "eth1": {
+                "eth1.101": {
                     "alt-subnet": [
-                        "0.0.0.0/0"
+                        "192.168.101.0/24"
                     ],
                     "role": "downstream",
                     "threshold": "1"
-                }
+                },
+				"eth1": {
+					"role": "disabled",
+					"threshold": "1"
+				},
+				"eth1.8": {
+					"role": "disabled",
+					"threshold": "1"
+				}
             }
         },
         "static": {
